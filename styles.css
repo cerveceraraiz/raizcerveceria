@@ -1,0 +1,8 @@
+:root { --bg:#0b0b0b; --paper:#121212; --text:#ffffff; --muted:#d9d9d9; --brand:#d8a63a; --brand-dark:#a77410; }
+body{margin:0;font-family:system-ui;color:var(--text);background:var(--bg)}
+.site-header{display:flex;justify-content:space-between;padding:.75rem;background:#121212}
+.site-nav ul{list-style:none;display:flex;gap:1rem;margin:0;padding:0}
+.site-nav a{color:var(--text);text-decoration:none}
+.hero{min-height:50vh;display:grid;place-items:center;text-align:center}
+.section{padding:2rem}
+.site-footer{text-align:center;padding:1rem;color:var(--muted)}
