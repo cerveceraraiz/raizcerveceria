@@ -23,6 +23,7 @@
     button { cursor: pointer; background: #f59e0b; color: #111; border: none; padding: .7rem 1rem; border-radius: .5rem; font-weight: 700; }
     .social a { color: #f59e0b; }
     .visually-hidden { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    .notice { background:#1f2937; padding: .75rem 1rem; border-radius:.5rem; font-size:.9rem; }
   </style>
 </head>
 <body>
@@ -40,16 +41,14 @@
     <h1>Contacto</h1>
     <p>Escríbenos para pedidos, colaboraciones o consultas. Te responderemos a la brevedad.</p>
 
-    <!-- Envío directo a email usando FormSubmit -->
-    <form action="https://formsubmit.co/raizcervecera@outlook.com" method="POST">
-      <!-- Asunto del correo que recibirás -->
-      <input type="hidden" name="_subject" value="Nuevo contacto desde la web — Raíz Cervecera" />
-      <!-- Página de gracias tras enviar (ajusta si creas gracias.html) -->
-      <input type="hidden" name="_next" value="/gracias.html" />
-      <!-- Desactiva el captcha de FormSubmit si ya usas honeypot -->
-      <input type="hidden" name="_captcha" value="false" />
-      <!-- Honeypot contra bots (FormSubmit recomienda ocultarlo) -->
-      <input type="text" name="_honey" class="visually-hidden" aria-hidden="true" />
+    <div class="notice">Este formulario usa FormSubmit con <strong>token</strong>. Reemplaza <code>TU_TOKEN_AQUI</code> por tu token real en producción.</div>
+
+    <!-- Formulario con token de FormSubmit -->
+    <form action="https://formsubmit.io/send/TU_TOKEN_AQUI" method="POST">
+      <input type="hidden" name="_subject" value="Nuevo contacto — Raíz Cervecera" />
+      <input type="hidden" name="_redirect" value="/gracias.html" />
+      <!-- Honeypot recomendado por FormSubmit.io -->
+      <input type="text" name="_formsubmit_id" style="display:none" aria-hidden="true" />
 
       <div class="row">
         <div class="field">
@@ -59,7 +58,6 @@
         <div class="field">
           <label for="email">Correo electrónico</label>
           <input id="email" name="email" type="email" placeholder="tucorreo@ejemplo.com" required />
-          <!-- Hace que el botón Responder apunte al remitente -->
           <input type="hidden" name="_replyto" value="" />
         </div>
       </div>
