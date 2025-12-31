@@ -1,45 +1,32 @@
+
 <!doctype html>
 <html lang="es">
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Quienes somos — Raíz Cervecera</title>
 
-  <meta charset=\"utf-8\" />
-  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />
   <style>
     :root { --bg:#ffffff; --text:#222; --accent:#1f6f50; }
     html, body { height:100%; }
-    body {
-      margin:0;
-      font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif;
-      color:var(--text);
-      background:#111 url('assets/img/Fondo_raiz.jpg') center/cover no-repeat fixed;
-    }
+    body { margin:0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,"Noto Sans",sans-serif; color:var(--text); background:#111 url('assets/img/Fondo_raiz.jpg') center/cover no-repeat fixed; }
     .page { background: rgba(255,255,255,0.80); min-height:100dvh; display:flex; flex-direction:column; }
-    header { display:grid; grid-template-columns: 1fr; gap:12px; padding:12px 20px; border-bottom:1px solid #eee; backdrop-filter: blur(2px); }
-    .logo-wrap { display:flex; align-items:center; gap:12px; }
-    .logo { height:40px; width:auto; mix-blend-mode:multiply; image-rendering:-webkit-optimize-contrast; }
-    nav { width:100%; }
-    .menu { list-style:none; margin:0; padding:0; display:flex; justify-content:center; align-items:center; gap:16px; flex-wrap:wrap; }
-    .menu a { text-decoration:none; color:var(--text); padding:8px 10px; border-radius:6px; }
-    .menu a:hover { background:#f3f3f3; }
-    .menu li.login { margin-left:auto; }
-    @media (max-width:560px){ .menu{ justify-content:center; } .menu li.login{ flex-basis:100%; text-align:right; } }
-    main { flex:1; padding:24px; }
-    .content { max-width:860px; margin:0 auto; }
-    h1 { font-size: clamp(1.6rem, 2.2vw, 2.2rem); margin: 0 0 12px; }
-    p { color:#555; }
-    .card { background:#fff; border:1px solid #eee; border-radius:12px; padding:16px; box-shadow:0 4px 12px rgba(0,0,0,0.06); }
-    .grid { display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-    .label { font-weight:600; color:#333; }
-    input, textarea { width:100%; padding:10px; border:1px solid #ccc; border-radius:8px; font-size:1rem; }
-    button { background:var(--accent); color:#fff; border:none; border-radius:8px; padding:10px 14px; font-weight:600; cursor:pointer; }
-    button:hover { filter:brightness(1.05); }
-    /* Footer */
-    footer { text-align:center; padding:20px; color:#666; border-top:1px solid #eee; backdrop-filter: blur(2px); background: rgba(255,255,255,0.85); }
-    .footer-bottom { display:inline-flex; gap:10px; align-items:center; justify-content:center; margin-top:8px; }
-    .social-link { color:#1f6f50; text-decoration:none; font-size:0.95rem; word-break:break-all; }
-    .social-link:hover { text-decoration: underline; }
-    .sep { color:#999; }
+    header { position: sticky; top: 0; z-index: 1000; display: grid; grid-template-columns: 1fr; gap: 12px; padding: 12px 20px; border-bottom: 1px solid rgba(255,255,255,0.35); background: rgba(255,255,255,0.50); backdrop-filter: blur(6px); transition: box-shadow .15s ease; }
+    header.stuck { box-shadow: 0 6px 16px rgba(0,0,0,0.06); }
+    .logo-wrap { display: flex; align-items: center; gap: 12px; }
+    .logo { height: 42px; width: auto; mix-blend-mode: multiply; image-rendering: -webkit-optimize-contrast; }
+    nav { width: 100%; }
+    .menu { list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .menu a { text-decoration: none; color: #1f6f50; background: rgba(31,111,80,0.10); border: 1px solid #ddd; padding: 8px 14px; border-radius: 999px; font-weight: 600; letter-spacing: 0.2px; transition: background .15s ease, border-color .15s ease, transform .15s ease, color .15s ease; }
+    .menu a:hover { background: rgba(31,111,80,0.18); border-color: #ccc; transform: translateY(-1px); color: #175640; }
+    .menu li.login { margin-left: auto; position: relative; }
+    .menu li.login::before { content: ""; position: absolute; left: -12px; top: 50%; transform: translateY(-50%); width: 1px; height: 18px; background: #ddd; }
+    .menu li.login a { color: #fff; background: #1f6f50; border-color: #1f6f50; box-shadow: 0 2px 6px rgba(31,111,80,0.25); }
+    .menu li.login a:hover { filter: brightness(1.05); transform: translateY(-1px); }
+    .menu a.active { background: rgba(31,111,80,0.20); border-color: #bbb; }
+    main { flex: 1; padding: 24px; }
+    .content { max-width: 860px; margin: 0 auto; }
+    @media (max-width: 560px) { .menu { justify-content: center; } .menu li.login { flex-basis: 100%; text-align: right; } .menu li.login::before { display: none; } }
   </style>
 
 </head>
@@ -47,41 +34,33 @@
   <div class="page">
 
     <header>
-      <div class=\"logo-wrap\">
-        <a href=\"index.html\" aria-label=\"Inicio\"> 
-          <img src=\"assets/img/logo.png\" alt=\"Logo Raíz Cervecera\" class=\"logo\" />
+      <div class="logo-wrap">
+        <a href="index.html" aria-label="Inicio">
+          <img src="assets/img/logo.png" alt="Logo Raíz Cervecera" class="logo" />
         </a>
       </div>
-      <nav aria-label=\"Menú principal\">
-        <ul class=\"menu\">
-          <li><a href=\"index.html\">Inicio</a></li>
-          <li><a href=\"quienes-somos.html\">Quienes somos</a></li>
-          <li><a href=\"cervezas.html\">Nuestra Cervezas</a></li>
-          <li><a href=\"contacto.html\">Contacto</a></li>
-          <li class=\"login\"><a href=\"login.html\">Login</a></li>
+      <nav aria-label="Menú principal">
+        <ul class="menu">
+          <li><a href="index.html" class="">Inicio</a></li>
+          <li><a href="quienes-somos.html" class="active">Quienes somos</a></li>
+          <li><a href="cervezas.html" class="">Nuestra Cervezas</a></li>
+          <li><a href="contacto.html" class="">Contacto</a></li>
+          <li class="login"><a href="login.html">Login</a></li>
         </ul>
       </nav>
     </header>
+    <script>document.addEventListener('scroll',function(){var h=document.querySelector('header'); if(h){ h.classList.toggle('stuck', window.scrollY>10); }});</script>
 
     <main>
       <div class="content">
         <h1>Quienes somos</h1>
-        <div class="card">
+        <div style="background:#fff; border:1px solid #eee; border-radius:12px; padding:16px; box-shadow:0 4px 12px rgba(0,0,0,0.06);">
           <p>Somos una cervecería independiente con raíces en Quilpué. Elaboramos pequeños lotes con ingredientes locales y procesos cuidados para lograr cervezas honestas y con carácter.</p>
           <p>Nuestra filosofía: calidad sobre cantidad, transparencia en procesos y cercanía con la comunidad.</p>
         </div>
       </div>
+
     </main>
-
-    <footer role="contentinfo" aria-label="Pie de página">
-      <div>© Raíz Cervecera · Quilpué, Chile</div>
-      <div class="footer-bottom" aria-label="Redes sociales">
-        <a class="social-link" href="https://instagram.com/raizcervecera" target="_blank" rel="noopener noreferrer">https://instagram.com/raizcervecera</a>
-        <span class="sep">·</span>
-        <a class="social-link" href="https://web.facebook.com/RaizCervecera" target="_blank" rel="noopener noreferrer">https://web.facebook.com/RaizCervecera</a>
-      </div>
-    </footer>
-
   </div>
 </body>
 </html>
