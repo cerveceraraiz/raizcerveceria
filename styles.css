@@ -1,6 +1,6 @@
 
 
-/* Footer (se mantiene) */
+
 footer {
   text-align: center;
   padding: 20px;
@@ -9,18 +9,18 @@ footer {
   backdrop-filter: blur(2px);
 }
 
-/* Contenedor general del bloque de redes */
+/* Contenedor de redes en el footer */
 .footer-bottom {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   justify-content: center;
-  align-items: center; /* asegura alineación vertical */
+  align-items: center;
   margin-top: 10px;
   color: #444;
 }
 
-/* Lista y elementos: ahora serán filas con icono + texto */
+/* Lista y cada ítem: icono + texto alineados */
 .social {
   display: inline-flex;
   gap: 12px;       /* separación entre cada red */
@@ -30,23 +30,21 @@ footer {
   list-style: none;
 }
 
-.social li {
-  display: inline-flex;
-}
+.social li { display: inline-flex; }
 
-/* Enlace que contiene icono + texto */
+/* Enlace con pill y hover */
 .social a {
   display: inline-flex;
-  align-items: center;      /* alinea icono con texto */
-  gap: 8px;                 /* separación entre icono y texto */
-  padding: 6px 10px;        /* respiración alrededor */
-  border-radius: 999px;     /* pill */
-  background: rgba(31, 111, 80, 0.10);
+  align-items: center;
+  gap: 8px;                /* espacio entre icono y texto */
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(31, 111, 80, 0.10); /* tono acorde al sitio */
   border: 1px solid #ddd;
   text-decoration: none;
-  color: #1f6f50;           /* tono acorde al sitio */
+  color: #1f6f50;
   transition: transform .15s ease, background .15s ease, border-color .15s ease;
-  line-height: 1;           /* ayuda a la alineación */
+  line-height: 1;
 }
 
 .social a:hover {
@@ -55,10 +53,10 @@ footer {
   border-color: #ccc;
 }
 
-/* Tamaño del contenedor del icono (pequeño) */
+/* Tamaño compacto (pequeño) del icono */
 .social .icon {
-  width: 28px;              /* antes 36px */
-  height: 28px;             /* antes 36px */
+  width: 28px;    /* contenedor del icono */
+  height: 28px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -67,18 +65,17 @@ footer {
 
 /* SVG pequeño y con color heredado */
 .social svg {
-  width: 14px;              /* antes 18px */
-  height: 14px;             /* antes 18px */
+  width: 14px;
+  height: 14px;
   fill: currentColor;
 }
 
-/* Texto de la etiqueta de la red */
+/* Texto de la red */
 .social .label {
   font-size: 0.95rem;
   color: #1f6f50;
 }
 
-/* Versión compacta en móviles: reduce gaps */
 @media (max-width: 560px) {
   .footer-bottom { gap: 8px; }
   .social { gap: 8px; }
