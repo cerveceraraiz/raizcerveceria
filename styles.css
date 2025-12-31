@@ -1,4 +1,6 @@
 
+
+/* Footer (se mantiene) */
 footer {
   text-align: center;
   padding: 20px;
@@ -7,38 +9,44 @@ footer {
   backdrop-filter: blur(2px);
 }
 
-/* Contenedor de redes */
+/* Contenedor general del bloque de redes */
 .footer-bottom {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   justify-content: center;
-  align-items: center;
+  align-items: center; /* asegura alineación vertical */
   margin-top: 10px;
   color: #444;
 }
 
-/* Lista de iconos */
+/* Lista y elementos: ahora serán filas con icono + texto */
 .social {
   display: inline-flex;
-  gap: 12px;
+  gap: 12px;       /* separación entre cada red */
   align-items: center;
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
+.social li {
+  display: inline-flex;
+}
+
+/* Enlace que contiene icono + texto */
 .social a {
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 999px;
-  background: rgba(31, 111, 80, 0.10); /* usa tu --accent si prefieres */
+  align-items: center;      /* alinea icono con texto */
+  gap: 8px;                 /* separación entre icono y texto */
+  padding: 6px 10px;        /* respiración alrededor */
+  border-radius: 999px;     /* pill */
+  background: rgba(31, 111, 80, 0.10);
   border: 1px solid #ddd;
   text-decoration: none;
+  color: #1f6f50;           /* tono acorde al sitio */
   transition: transform .15s ease, background .15s ease, border-color .15s ease;
+  line-height: 1;           /* ayuda a la alineación */
 }
 
 .social a:hover {
@@ -47,17 +55,32 @@ footer {
   border-color: #ccc;
 }
 
-/* Color de los SVG (usa el color actual del texto) */
+/* Tamaño del contenedor del icono (pequeño) */
+.social .icon {
+  width: 28px;              /* antes 36px */
+  height: 28px;             /* antes 36px */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+}
+
+/* SVG pequeño y con color heredado */
 .social svg {
-  width: 18px;
-  height: 18px;
+  width: 14px;              /* antes 18px */
+  height: 14px;             /* antes 18px */
   fill: currentColor;
-  color: #1f6f50; /* tono verde acorde al sitio */
 }
 
-/* Texto © */
-.footer-copy {
+/* Texto de la etiqueta de la red */
+.social .label {
   font-size: 0.95rem;
-  color: #666;
+  color: #1f6f50;
 }
 
+/* Versión compacta en móviles: reduce gaps */
+@media (max-width: 560px) {
+  .footer-bottom { gap: 8px; }
+  .social { gap: 8px; }
+  .social a { gap: 6px; padding: 5px 8px; }
+}
