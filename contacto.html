@@ -1,37 +1,87 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="theme-color" content="#0b0b0b" />
-<link rel="icon" type="image/jpeg" href="assets/logo.jpg" />
-<link rel="stylesheet" href="../styles.css" />
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script defer src="scripts/main.js"></script>
-<title>Contacto — Raíz Cervecera</title></head><body><header class="site-header" role="banner">
-  <a class="brand" href="../index.html" aria-label="Inicio">
-    <img src="assets/logo.jpg" alt="Logo Raíz Cervecera" />
-    <span>Raíz Cervecera</span>
-  </a>
-  <button class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Abrir menú">☰</button>
-  <nav id="site-nav" class="site-nav" aria-label="Navegación principal">
-    <ul>
-      <li><a href="../index.html">Inicio</a></li>
-      <li><a href="../cervezas.html">Cervezas</a></li>
-      <li><a href="../origen.html">Origen</a></li>
-      <li><a href="../contacto.html">Contacto</a></li>
-      <li><a href="../admin/index.html">Admin</a></li>
-    </ul>
-  </nav>
-</header>
-<main><section class="section"><h2>Contacto</h2><form id="contact-form" method="POST" action="https://formspree.io/f/TU_ID_FORMSPREE"><input name="nombre" placeholder="Nombre" required><input name="email" type="email" placeholder="Email" required><textarea name="mensaje" placeholder="Mensaje" required></textarea><button type="submit">Enviar</button></form></section></main><footer class="site-footer" aria-label="Pie de página">
-  <div class="footer-inner">
-    <p>© <span id="year"></span> Raíz Cervecera · Quilpué, Chile</p>
-    <div class="social">
-      <a class="social-link" href="https://www.instagram.com/raizcervecera" target="_blank" rel="noopener" aria-label="Instagram">
-        <span>@raizcervecera</span>
-      </a>
-      <a class="social-link" href="https://www.facebook.com/raizcervecera" target="_blank" rel="noopener" aria-label="Facebook">
-        <span>Raíz Cervecera</span>
-      </a>
-    </div>
+<!doctype html>
+<html lang="es">
+<head>
+  <title>Contacto — Raíz Cervecera</title>
+
+  <meta charset=\"utf-8\" />
+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />
+  <style>
+    :root { --bg:#ffffff; --text:#222; --accent:#1f6f50; }
+    html, body { height:100%; }
+    body {
+      margin:0;
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif;
+      color:var(--text);
+      background:#111 url('assets/img/Fondo_raiz.jpg') center/cover no-repeat fixed;
+    }
+    .page { background: rgba(255,255,255,0.80); min-height:100dvh; display:flex; flex-direction:column; }
+    header { display:grid; grid-template-columns: 1fr; gap:12px; padding:12px 20px; border-bottom:1px solid #eee; backdrop-filter: blur(2px); }
+    .logo-wrap { display:flex; align-items:center; gap:12px; }
+    .logo { height:40px; width:auto; mix-blend-mode:multiply; image-rendering:-webkit-optimize-contrast; }
+    nav { width:100%; }
+    .menu { list-style:none; margin:0; padding:0; display:flex; justify-content:center; align-items:center; gap:16px; flex-wrap:wrap; }
+    .menu a { text-decoration:none; color:var(--text); padding:8px 10px; border-radius:6px; }
+    .menu a:hover { background:#f3f3f3; }
+    .menu li.login { margin-left:auto; }
+    @media (max-width:560px){ .menu{ justify-content:center; } .menu li.login{ flex-basis:100%; text-align:right; } }
+    main { flex:1; padding:24px; }
+    .content { max-width:860px; margin:0 auto; }
+    h1 { font-size: clamp(1.6rem, 2.2vw, 2.2rem); margin: 0 0 12px; }
+    p { color:#555; }
+    .card { background:#fff; border:1px solid #eee; border-radius:12px; padding:16px; box-shadow:0 4px 12px rgba(0,0,0,0.06); }
+    .grid { display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .label { font-weight:600; color:#333; }
+    input, textarea { width:100%; padding:10px; border:1px solid #ccc; border-radius:8px; font-size:1rem; }
+    button { background:var(--accent); color:#fff; border:none; border-radius:8px; padding:10px 14px; font-weight:600; cursor:pointer; }
+    button:hover { filter:brightness(1.05); }
+  </style>
+
+</head>
+<body>
+  <div class="page">
+
+    <header>
+      <div class=\"logo-wrap\">
+        <a href=\"index.html\" aria-label=\"Inicio\"> 
+          <img src=\"assets/img/logo.png\" alt=\"Logo Raíz Cervecera\" class=\"logo\" />
+        </a>
+      </div>
+      <nav aria-label=\"Menú principal\">
+        <ul class=\"menu\">
+          <li><a href=\"index.html\">Inicio</a></li>
+          <li><a href=\"quienes-somos.html\">Quienes somos</a></li>
+          <li><a href=\"cervezas.html\">Nuestra Cervezas</a></li>
+          <li><a href=\"contacto.html\">Contacto</a></li>
+          <li class=\"login\"><a href=\"login.html\">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="content">
+        <h1>Contacto</h1>
+        <div class="card">
+          <form action="#" method="post" autocomplete="on" class="grid">
+            <div>
+              <label class="label" for="nombre">Nombre</label>
+              <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required />
+            </div>
+            <div>
+              <label class="label" for="email">Correo</label>
+              <input id="email" name="email" type="email" placeholder="tucorreo@dominio.cl" required />
+            </div>
+            <div style="grid-column: 1 / -1;">
+              <label class="label" for="mensaje">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntanos en qué te podemos ayudar" required></textarea>
+            </div>
+            <div style="grid-column: 1 / -1;">
+              <button type="submit">Enviar</button>
+            </div>
+          </form>
+          <p style="margin-top:8px;color:#666;">También puedes escribirnos a <strong>contacto@raizcervecera.cl</strong>.</p>
+        </div>
+      </div>
+    </main>
   </div>
-</footer>
-</body></html>
+</body>
+</html>
