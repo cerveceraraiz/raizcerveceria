@@ -21,6 +21,7 @@
       flex-direction:column;
     }
 
+    /* Header */
     header {
       display:grid;
       grid-template-columns: 1fr;
@@ -32,6 +33,7 @@
     .logo-wrap { display:flex; align-items:center; gap:12px; }
     .logo { height:40px; width:auto; mix-blend-mode:multiply; image-rendering:-webkit-optimize-contrast; }
 
+    /* Menú */
     nav { width:100%; }
     .menu {
       list-style:none;
@@ -51,13 +53,22 @@
     }
     .menu a:hover { background:#f3f3f3; }
     .menu li.login { margin-left:auto; }
-
     @media (max-width:560px){
       .menu{ justify-content:center; }
       .menu li.login{ flex-basis:100%; text-align:right; }
     }
 
-    main { flex:1; } /* Sin hero */
+    /* Contenido principal sin hero */
+    main { flex:1; }
+
+    /* Footer agregado */
+    footer {
+      text-align:center;
+      padding:20px;
+      color:#666;
+      border-top:1px solid #eee;
+      backdrop-filter: blur(2px);
+    }
   </style>
 </head>
 <body>
@@ -82,6 +93,10 @@
     <main>
       <!-- Sin hero, solo fondo -->
     </main>
+
+    <footer>
+      © Raíz Cervecera · Quilpué, Chile
+    </footer>
   </div>
 </body>
 </html>
