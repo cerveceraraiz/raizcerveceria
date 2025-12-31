@@ -8,7 +8,7 @@
 body{
   margin:0; color:var(--text);
   font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; line-height:1.6;
-  background: url('Fondo_raiz.jpg') no-repeat center center fixed; background-size: cover;
+  background: url('assets\img\Fondo_raiz.jpg') no-repeat center center fixed; background-size: cover;
 }
 body::before{ content:""; position:fixed; inset:0; background: rgba(18,18,18,0.85); z-index:-1 }
 header{ position:sticky; top:0; z-index:1000; background: rgba(31,31,31,0.85); backdrop-filter: blur(3px); border-bottom:1px solid var(--border) }
