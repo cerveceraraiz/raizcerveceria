@@ -1,97 +1,187 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Raíz Cervecera — Inicio</title>
-  <meta name="description" content="Desde la raíz, cerveza de verdad. Pequeños lotes, gran carácter. Ingredientes locales y procesos cuidados." />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
-  <!-- Preload preferido: WEBP (si el navegador no soporta, usará JPEG desde CSS) -->
-  <link rel="preload" href="Fondo_raiz_2026.webp" as="image" />
-  <link rel="stylesheet" href="styles.css" />
+  <title>Inicio — Raíz Cervecera</title>
+  <meta name="description" content="Desde la raíz, cerveza de verdad. Pequeños lotes, gran carácter." />
+  <link rel="icon" href="assets/img/logo.png" type="image/png" />
+  <style>
+    :root {
+      --bg: #000000;   /* Fondo negro */
+      --text: #f5f5f5; /* Texto claro */
+      --muted: #c8c8c8;
+      --border: #222222;
+      --accent: #14b8a6; /* teal para acentos en oscuro */
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.5;
+    }
+
+    /* Header en oscuro */
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+      background: rgba(0,0,0,0.6); /* semitransparente para sticky */
+      backdrop-filter: blur(4px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      color: inherit;
+    }
+    .brand__logo {
+      width: 48px;
+      height: auto;
+      display: block;
+    }
+    .brand__name {
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.2px;
+    }
+
+    /* Nav */
+    .site-nav { display: flex; align-items: center; gap: 0.75rem; }
+    .nav__toggle { display: none; color: var(--text); }
+    .nav__list {
+      display: flex;
+      gap: 1rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .site-nav a {
+      text-decoration: none;
+      color: var(--text);
+      padding: 0.3rem 0.2rem;
+    }
+    .site-nav a:hover { color: #ffffff; }
+
+    /* Sección con logo centrado */
+    .center-logo {
+      min-height: 60vh;
+      display: grid;
+      place-items: center;
+      padding: 2.5rem 1rem;
+    }
+    .center-logo img {
+      width: clamp(160px, 30vw, 360px);
+      height: auto;
+      filter: drop-shadow(0 6px 18px rgba(0,0,0,.6));
+    }
+    .center-logo .caption {
+      margin-top: 0.75rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    /* Hero */
+    .hero {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 1rem;
+      text-align: center;
+    }
+    .hero h1 { font-size: 2rem; margin: 0 0 0.5rem; }
+    .hero p { color: var(--muted); margin: 0.25rem 0 1rem; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 2rem;
+      padding: 1rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .site-header { flex-wrap: wrap; }
+      .nav__toggle {
+        display: inline-block;
+        background: none;
+        border: 1px solid var(--border);
+        padding: 0.4rem 0.6rem;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      .nav__list {
+        width: 100%;
+        margin-top: 0.5rem;
+        flex-direction: column;
+      }
+    }
+  </style>
+  <script>
+    // Toggle simple para menú móvil
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.querySelector('.nav__toggle');
+      const list = document.getElementById('primary-nav');
+      if (toggle && list) {
+        toggle.addEventListener('click', () => {
+          const expanded = toggle.getAttribute('aria-expanded') === 'true';
+          toggle.setAttribute('aria-expanded', String(!expanded));
+          list.style.display = expanded ? '' : 'block';
+        });
+      }
+    });
+  </script>
 </head>
 <body>
-  <!-- ===== Navbar fijo ===== -->
-  <header class="nav" role="banner">
-    <div class="wrap">
-      <a class="brand" href="index.html" aria-label="Inicio — Raíz Cervecera">
-        <img class="logo" src="logo_raiz.svg" alt="Logo Raíz Cervecera" />
-        <span class="brand-text">Raíz Cervecera</span>
-      </a>
-      <nav class="menu" aria-label="Principal">
-        <a href="index.html">Inicio</a>
-        <a href="cervezas.html">Cervezas</a>
-        <a href="origen.html">Origen</a>
-        <a href="contacto.html">Contacto</a>
-        <a href="admin/index.html">Admin</a>
-      </nav>
-      <button class="hamburger" id="btnMenu" aria-label="Abrir menú">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <div class="drawer" id="drawer" aria-label="Menú móvil">
-      <a href="index.html">Inicio</a>
-      <a href="cervezas.html">Cervezas</a>
-      <a href="origen.html">Origen</a>
-      <a href="contacto.html">Contacto</a>
-      <a href="admin/index.html">Admin</a>
-    </div>
+  <!-- Header con logo y navegación -->
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Ir al inicio">
+      <img src="assets/img/logo.png" alt="Logo Raíz Cervecera" class="brand__logo" />
+      <span class="brand__name">Raíz Cervecera</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Navegación principal">
+      <button class="nav__toggle" aria-expanded="false" aria-controls="primary-nav">☰</button>
+      <ul id="primary-nav" class="nav__list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="cervezas.html">Cervezas</a></li>
+        <li><a href="origen.html">Origen</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="admin/index.html">Admin</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- ===== Hero ===== -->
-  <main class="hero" id="hero" role="main">
-    <h1 class="brand-title">Raíz Cervecera</h1>
-    <p class="subline">Quilpué · Chile</p>
-    <div class="cta-row">
+  <!-- Logo centrado en la página -->
+  <section class="center-logo" aria-label="Logo principal de Raíz Cervecera">
+    <div>
+      <img src="assets/img/logo.png" alt="Logo principal Raíz Cervecera" />
+      <div class="caption">Desde la raíz, cerveza de verdad</div>
     </div>
-  </main>
-
-  <!-- ===== Destacados ===== -->
-  <section class="features" aria-label="Atributos">
-    <article class="card">
-      <h3>Ingredientes locales</h3>
-      <p>Seleccionamos maltas y lúpulos chilenos siempre que es posible.</p>
-    </article>
-    <article class="card">
-      <h3>Procesos cuidados</h3>
-      <p>Control en cada etapa para perfiles limpios y balanceados.</p>
-    </article>
-    <article class="card">
-      <h3>Carácter en cada lote</h3>
-      <p>Series pequeñas para explorar estilos y variedades.</p>
-    </article>
   </section>
 
-  <!-- ===== Footer ===== -->
-  <footer role="contentinfo">
-    <div class="footer-wrap">
-      <span class="copyright">© Raíz Cervecera · Quilpué, Chile</span>
-      <div class="social">
-        <span>Redes:</span>
-        <a href="https://instagram.com/raizcervecera" target="_blank" rel="noopener" aria-label="Instagram @raizcervecera">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm6.5-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z"/></svg>
-          <span>@raizcervecera</span>
-        </a>
-        <span>·</span>
-        <a href="https://web.facebook.com/RaizCervecera" target="_blank" rel="noopener" aria-label="Facebook Raíz Cervecera">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2.3V12h2.3V9.7c0-2.3 1.4-3.6 3.5-3.6 1 0 2 .17 2 .17v2.2h-1.1c-1.1 0-1.5.7-1.5 1.4V12h2.5l-.4 2.9h-2.1v7A10 10 0 0 0 22 12Z"/></svg>
-          <span>facebook.com/RaizCervecera</span>
-        </a>
-      </div>
-    </div>
-  </footer>
+  <!-- Hero / contenido principal -->
+  <main class="hero">
+    <h1>Pequeños lotes, gran carácter</h1>
+    <p>Ingredientes locales y procesos cuidados.</p>
+  </main>
 
-  <script>
-    // Menú móvil
-    const btn = document.getElementById('btnMenu');
-    const drawer = document.getElementById('drawer');
-    btn?.addEventListener('click', () => {
-      const visible = drawer.classList.contains('open');
-      drawer.classList.toggle('open', !visible);
-    });
-    drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      drawer.classList.remove('open');
-    }));
-  </script>
+  <footer>
+    © Raíz Cervecera · Quilpué, Chile
+  </footer>
 </body>
 </html>
