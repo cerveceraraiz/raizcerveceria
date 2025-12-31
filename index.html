@@ -14,27 +14,50 @@
       color:var(--text);
       background:#111 url('assets/img/Fondo_raiz.jpg') center/cover no-repeat fixed;
     }
-    .page { background: rgba(255,255,255,0.80); min-height:100dvh; display:flex; flex-direction:column; }
+    .page {
+      background: rgba(255,255,255,0.80);
+      min-height:100dvh;
+      display:flex;
+      flex-direction:column;
+    }
 
-    header { display:grid; grid-template-columns: 1fr; gap:12px; padding:12px 20px; border-bottom:1px solid #eee; backdrop-filter: blur(2px); }
+    header {
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:12px;
+      padding:12px 20px;
+      border-bottom:1px solid #eee;
+      backdrop-filter: blur(2px);
+    }
     .logo-wrap { display:flex; align-items:center; gap:12px; }
     .logo { height:40px; width:auto; mix-blend-mode:multiply; image-rendering:-webkit-optimize-contrast; }
 
     nav { width:100%; }
-    .menu { list-style:none; margin:0; padding:0; display:flex; justify-content:center; align-items:center; gap:16px; flex-wrap:wrap; }
-    .menu a { text-decoration:none; color:var(--text); padding:8px 10px; border-radius:6px; }
+    .menu {
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+    .menu a {
+      text-decoration:none;
+      color:var(--text);
+      padding:8px 10px;
+      border-radius:6px;
+    }
     .menu a:hover { background:#f3f3f3; }
     .menu li.login { margin-left:auto; }
-    @media (max-width:560px){ .menu{ justify-content:center; } .menu li.login{ flex-basis:100%; text-align:right; } }
 
-    /* Hero restaurado */
-    .hero { text-align:center; padding:48px 20px; }
-    .brand-mark { display:block; margin:0 auto 16px; max-width:240px; width:50%; height:auto; }
-    .hero h1 { font-size:clamp(1.6rem,2.2vw,2.2rem); margin:0 0 6px; }
-    .hero h2 { font-size:clamp(1.1rem,1.8vw,1.5rem); font-weight:600; margin:10px 0 18px; color:#444; }
-    .hero p { max-width:780px; margin:0 auto; color:#555; }
+    @media (max-width:560px){
+      .menu{ justify-content:center; }
+      .menu li.login{ flex-basis:100%; text-align:right; }
+    }
 
-    /* Sin footer */
+    main { flex:1; } /* Sin hero */
   </style>
 </head>
 <body>
@@ -57,15 +80,8 @@
     </header>
 
     <main>
-      <section class="hero">
-        <img src="assets/img/Fondo_raiz.jpg" alt="Marca Raíz Cervecera" class="brand-mark" />
-        <h1>Desde la raíz, cerveza de verdad</h1>
-        <h2>Pequeños lotes, gran carácter</h2>
-        <p>Ingredientes locales y procesos cuidados.</p>
-      </section>
+      <!-- Sin hero, solo fondo -->
     </main>
-
-    <!-- Sin footer -->
   </div>
 </body>
 </html>
