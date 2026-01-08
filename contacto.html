@@ -1,15 +1,15 @@
-
-<!DOCTYPE html>
+/*<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contacto — Raíz Cervecera</title>
-  <style>
-     :root { --bg-url: url('Fondo_raiz.jpg'); }
-    body {
+<meta charset="utf-8"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contacto — Raíz Cervecera</title>
+<style>
+ :root { --bg-url: url('Fondo_raiz.jpg'); }
+ body {
       margin: 0;
-	  overflow-y: hidden;	/* Para ocultar el scroll vertical */
+	 /* overflow-y: hidden;	/* Para ocultar el scroll vertical */
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
       color: #f5f5f5;
       background-image: var(--bg-url);
@@ -18,28 +18,38 @@
       background-repeat: no-repeat;
       background-attachment: fixed;
     }
-	 .overlay { min-height: 100%; background: rgba(0,0,0,0.45); display: flex; flex-direction: column; }
-    header { backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(2px); }
-    .nav { display:flex; gap:1rem; padding:1rem; align-items:center; justify-content:center; flex-wrap:wrap; }
-    .nav a { color:#ffd56b; text-decoration:none; font-weight:600; }
-    .nav a:hover { text-decoration: underline; }
-    main { padding: 1.5rem; max-width: 900px; margin: 0 auto; }
-	.card { background: rgba(0,0,0,0.35); border: 2px solid rgba(255,213,107,0.4); border-radius:50px; padding:0.2rem 3rem; max-width: 3000px; }
-    h1 { margin-top: 0; }
-    form { display: grid; gap: 1rem; max-width: 700px; }
-    .field { display: grid; gap: .35rem; }
-    label { font-weight: 600; }
-    input, textarea, select { padding: .6rem .7rem; border-radius: .5rem; border: 1px solid #444; background: #181818; color: #eee; }
-    textarea { min-height: 70px; }
-    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .hint { font-size: .9rem; color: #aaa; }
-    .actions { display: flex; gap: .75rem; align-items: center; }
-    button { cursor: pointer; background: #f59e0b; color: #111; border: none; padding: .7rem 1rem; border-radius: .5rem; font-weight: 600; }
-    .social a { color: #f59e0b; }
-    .visually-hidden { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
-    .notice { background:#1f2937; padding: .75rem 1rem; border-radius:.5rem; font-size:.9rem; }
-  </style>
-  
+ .overlay { min-height: 100%; background: rgba(0,0,0,0.45); display: flex; flex-direction: column; }
+ header { backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(2px); }
+.nav { display:flex; gap:1rem; padding:1rem; align-items:center; justify-content:center; flex-wrap:wrap; }
+.nav a { color:#ffd56b; text-decoration:none; font-weight:600; }
+.nav a:hover { text-decoration: underline; }
+ main { padding: 1.5rem; max-width: 900px; margin: 0 auto; }
+.card { background: rgba(0,0,0,0.35); border: 2px solid rgba(255,213,107,0.4); border-radius:50px; padding:0.2rem 3rem; max-width: 3000px; }
+.card h2{margin-top:0;color:var(--gold);font-size:1.35rem}
+.card p.lead{opacity:.9}
+h1 { margin-top: 0; }
+form{display:grid;gap:.9rem}
+.field { display: grid; gap: .35rem; }
+.label{font-weight:600;color:var(--gold)}
+ input, textarea, select { padding: .6rem .7rem; border-radius: .5rem; border: 1px solid #444; background: #181818; color: #eee; }
+ textarea { min-height: 70px; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.hint { font-size: .9rem; color: #aaa; }
+.actions { display: flex; gap: .75rem; align-items: center; }
+button { cursor: pointer; background: #f59e0b; color: #111; border: none; padding: 1rem 1rem; border-radius: 10rem; font-weight: 600; }
+  .social a { color: #f59e0b; }
+  .visually-hidden { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+  .notice { background:#1f2937; padding: .75rem 1rem; border-radius:.5rem; font-size:.9rem; }
+@media(min-width:640px){.row.two{grid-template-columns:1fr 1fr}}
+/*.button{background:var(--gold);color:#1b1b1b;border:none;padding:.9rem 1.25rem;border-radius:12px;font-weight:700;cursor:pointer}
+/*.button:hover{filter:brightness(1.05)}
+.helper{font-size:.85rem;opacity:.8}
+footer{text-align:center;padding:1.25rem;color:var(--gold)}
+footer a{color:var(--gold)}
+
+
+
+</style>
 <style>
 .lista-cervezas {
     display: flex;
@@ -92,104 +102,74 @@
         align-items: center;
     }
 }
-</style></head>
-
+</style>
 </head>
 <body>
-  <header>
-   <nav aria-label="Principal" class="nav">
+<header>
+<nav aria-label="Principal" class="nav">
+<nav>
 <a href="index.html">Inicio</a>
 <a href="quienes-somos.html">Quienes somos</a>
-<a href="cervezas.html">Nuestra Cervezas</a>
+<a href="cervezas.html">Nuestras Cervezas</a>
 <a href="contacto.html">Contacto</a>
 <a href="login.html">Login</a>
 </nav>
-  </header>
+</header>
+<main>
 
-  <main>
-    <section class="card">
-<h1 class="brand">Contacto</h1>
-<section class="Contacto">
-	
-    <p>Escríbenos para pedidos, colaboraciones o consultas. Te responderemos a la brevedad.</p>
 
-    <div class="notice">Este formulario usa FormSubmit con <strong>token</strong>. Reemplaza <code>TU_TOKEN_AQUI</code> por tu token real en producción.</div>
 
-    <!-- Formulario con token de FormSubmit -->
-    <form action="https://formsubmit.io/send/TU_TOKEN_AQUI" method="POST">
-      <input type="hidden" name="_subject" value="Nuevo contacto — Raíz Cervecera" />
-      <input type="hidden" name="_redirect" value="/gracias.html" />
-      <!-- Honeypot recomendado por FormSubmit.io -->
-      <input type="text" name="_formsubmit_id" style="display:none" aria-hidden="true" />
+<section class="contacto">
 
-      <div class="row">
-        <div class="field">
-          <label for="nombre">Nombre</label>
-          <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required />
-        </div>
-        <div class="field">
-          <label for="email">Correo electrónico</label>
-          <input id="email" name="email" type="email" placeholder="tucorreo@ejemplo.com" required />
-          <input type="hidden" name="_replyto" value="" />
-        </div>
-      </div>
 
-      <div class="field">
-        <label for="telefono">Teléfono (opcional)</label>
-        <input id="telefono" name="telefono" type="tel" placeholder="+56 9 1234 5678" />
-      </div>
+<div class="card">
+<h2>Contacto</h2><p class="lead">Escríbenos para pedidos, colaboraciones o consultas. Te responderemos a la brevedad.</p>
+<form action="https://formsubmit.co/TU_TOKEN_AQUI" method="POST">
+<div class="row">
 
-      <div class="row">
-        <div class="field">
-          <label for="asunto">Asunto</label>
-          <input id="asunto" name="asunto" type="text" placeholder="Pedido / Consulta / Colaboración" required />
-        </div>
-        <div class="field">
-          <label for="tipo">Tipo de consulta</label>
-          <select id="tipo" name="tipo" required>
-            <option value="Pedido">Pedido</option>
-            <option value="Colaboración">Colaboración</option>
-            <option value="Distribución">Distribución</option>
-            <option value="Otra">Otra</option>
-          </select>
-        </div>
-      </div>
 
-      <div class="field">
-        <label for="mensaje">Mensaje</label>
-        <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos en detalle cómo podemos ayudarte" required></textarea>
-        <p class="hint">Al enviar este formulario, aceptas que procesemos tus datos para responder a tu solicitud.</p>
-      </div>
 
+<label class="label" for="name">Nombre</label>
+<input class="input" id="name" name="name" placeholder="Tu nombre" required="True" type="text"/>
+
+<label class="label" for="email">Correo electrónico</label>
+<input class="input" id="email" name="email" placeholder="tu@correo.com" required="True" type="email"/>
+
+<label class="label" for="phone">Fono (opcional)</label>
+<input class="input" id="phone" name="phone" placeholder="+56 9 1234 5678" type="tel"/>
+
+<label class="label" for="subject">Asunto</label>
+<input class="input" id="subject" name="subject" placeholder="Asunto del mensaje" required="True" type="text"/>
+<label class="label" for="type">Tipo de consulta</label>
+<select class="input" id="type" name="type">
+<option value="Pedido">Pedido</option>
+<option value="Colaboración">Colaboración</option>
+<option value="Distribución">Distribución</option>
+<option value="Otra">Otra</option>
+</select>
+<label class="label" for="message">Mensaje</label>
+<textarea aria-label="Mensaje" id="message" name="message" placeholder="Cuéntanos en qué podemos ayudarte"></textarea>
+
+</form>
+  
       <div class="actions">
         <button type="submit">Enviar</button>
         <span class="hint">Gracias por contactarnos 🍻</span>
       </div>
+	  
     </form>
 
-    <section class="social" style="margin-top:2rem;">
+</div>
+
+<section class="social" style="margin-top:2rem;">
       <p>
         Síguenos: 
         <a href="https://instagram.com/raizcervecera" target="_blank" rel="noopener">Instagram</a> ·
         <a href="https://web.facebook.com/RaizCervecera" target="_blank" rel="noopener">Facebook</a>
       </p>
     </section>
-  </main>
-
-  <footer>
-    © Raíz Cervecera · Quilpué, Chile
-  </footer>
-
-  <script>
-    // Vincula _replyto al valor actual del campo email antes de enviar
-    document.addEventListener('DOMContentLoaded', function(){
-      const form = document.querySelector('form');
-      const email = document.getElementById('email');
-      const replyto = form.querySelector('input[name="_replyto"]');
-      form.addEventListener('submit', function(){
-        replyto.value = email.value;
-      });
-    });
-  </script>
+</main>
+<footer>© Raíz Cervecera · Quilpué, Chile
+</footer>
 </body>
 </html>
