@@ -1,63 +1,118 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>Nuestras Cervezas — Raíz Cervecera</title>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nuestras Cervezas — Raíz Cervecera</title>
   <style>
-    :root { --bg-url: url('Fondo_raiz.jpg'); }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-      color: #f5f5f5;
-      background-image: var(--bg-url);
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
+    :root{
+      --bg:#0f0f10; --card:#17181a; --text:#f5f7fa; --muted:#c9ced6; --accent:#f5a623;
     }
-    .overlay { min-height: 100%; background: rgba(0,0,0,0.45); display: flex; flex-direction: column; }
-    header { backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); }
-    .nav { display:flex; gap:1rem; padding:1rem; align-items:center; justify-content:center; flex-wrap:wrap; }
-    .nav a { color:#ffd56b; text-decoration:none; font-weight:600; }
-    .nav a:hover { text-decoration: underline; }
-    main { flex:1; display:grid; place-items:center; padding:2rem; text-align:center; }
-    .card { background: rgba(0,0,0,0.35); border: 1px solid rgba(255,213,107,0.4); border-radius:12px; padding:2rem 2.25rem; max-width: 860px; }
-    .brand { font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 0 0 0.5rem; letter-spacing: 0.6px; }
-    .subtitle { margin: 0.25rem 0 0.75rem; opacity: 0.9; }
-    footer { padding: 1rem; text-align:center; font-size:0.95rem; color:#eaeaea; }
-    footer a { color:#ffd56b; text-decoration:none; }
-    footer a:hover { text-decoration: underline; }
-    .social { display:inline-flex; gap:.75rem; align-items:center; }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu; background:var(--bg); color:var(--text)}
+    header, footer{padding:1rem 1.25rem; max-width:1100px; margin:0 auto}
+    nav a{color:var(--text); text-decoration:none; margin-right:.75rem; opacity:.9}
+    nav a:hover{opacity:1}
+    h1{font-size:2rem; margin:.5rem 0 0}
+    .lead{color:var(--muted); margin:.5rem 0 1rem}
+    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1rem; padding:1.25rem; max-width:1100px; margin:0 auto}
+    .card{background:var(--card); border:1px solid #25262a; border-radius:12px; overflow:hidden; display:flex; flex-direction:column}
+    .thumb{aspect-ratio:4/3; width:100%; object-fit:cover; background:#222}
+    .content{padding:1rem}
+    .tag{display:inline-block; padding:.2rem .5rem; border-radius:999px; font-size:.8rem; background:#26272c; color:var(--muted); margin-bottom:.5rem}
+    .title{margin:.25rem 0; font-size:1.1rem}
+    .desc{color:var(--muted); font-size:.95rem}
+    .abv{margin-top:.5rem; font-size:.85rem; color:#e1e6ef}
+    .note{max-width:1100px; margin:0 auto; padding:0 1.25rem 1rem; color:var(--muted); font-size:.9rem}
+    footer{border-top:1px solid #25262a; color:var(--muted)}
+    .social a{color:var(--muted); text-decoration:none}
   </style>
 </head>
 <body>
-  <div class="overlay">
-    <header>
-      <nav class="nav" aria-label="Principal">
-  <a href="index.html">Inicio</a>
-  <a href="quienes-somos.html">Quienes somos</a>
-  <a href="cervezas.html">Nuestra Cervezas</a>
-  <a href="contacto.html">Contacto</a>
-  <a href="login.html">Login</a>
-</nav>
-    </header>
-    <main>
-      <section class="card">
-        <h1 class="brand">Nuestras Cervezas</h1>
-        <p class="subtitle">Descubre nuestras variedades, estilos y notas de cata.</p>
-        <p>Contenido en preparación.</p>
-      </section>
-    </main>
-    <footer>
-      © Raíz Cervecera · Quilpué, Chile · 
-<span class="social">
-  <a href="https://instagram.com/raizcervecera" target="_blank" rel="noopener">Instagram</a>
-  <span>·</span>
-  <a href="https://web.facebook.com/RaizCervecera" target="_blank" rel="noopener">Facebook</a>
-</span>
-    </footer>
-  </div>
+  <header>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="quienes-somos.html">Quienes somos</a>
+      <a href="cervezas.html" aria-current="page">Nuestras Cervezas</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="login.html">Login</a>
+    </nav>
+    <h1>Nuestras Cervezas</h1>
+    <p class="lead">Descubre nuestras variedades, estilos y notas de cata.</p>
+  </header>
+
+  <section class="grid">
+    <!-- TROPICAL -->
+    <article class="card">
+      <img class="thumb" src="assets/img/Tropical_RAIZ.jpg" alt="TROPICAL — vaso con espuma y lúpulos" />
+      <div class="content">
+        <span class="tag">TROPICAL</span>
+        <h2 class="title">Tropical</h2>
+        <p class="desc">Aromas intensos a lúpulo con notas cítricas y tropicales; amargor marcado y final seco. Ideal para amantes del lúpulo.</p>
+        <p class="abv">ABV 6.0% · IBU 60 (referencial)</p>
+      </div>
+    </article>
+
+    <!-- Lager -->
+    <article class="card">
+      <img class="thumb" src="images/lager.jpg" alt="Lager — pinta dorada cristalina" />
+      <div class="content">
+        <span class="tag">Lager</span>
+        <h2 class="title">Lager Dorada</h2>
+        <p class="desc">Refrescante, cuerpo ligero y final limpio; notas a cereal y pan recién horneado. Perfecta para cualquier ocasión.</p>
+        <p class="abv">ABV 4.8% · IBU 18 (referencial)</p>
+      </div>
+    </article>
+
+    <!-- Stout -->
+    <article class="card">
+      <img class="thumb" src="images/stout.jpg" alt="Stout — pinta oscura con crema" />
+      <div class="content">
+        <span class="tag">Stout</span>
+        <h2 class="title">Stout Avena</h2>
+        <p class="desc">Café y chocolate al frente, con textura sedosa gracias a la avena. Amargor moderado y final tostado.</p>
+        <p class="abv">ABV 5.6% · IBU 35 (referencial)</p>
+      </div>
+    </article>
+
+    <!-- Pale Ale -->
+    <article class="card">
+      <img class="thumb" src="images/pale-ale.jpg" alt="Pale Ale — tono cobrizo" />
+      <div class="content">
+        <span class="tag">Pale Ale</span>
+        <h2 class="title">American Pale Ale</h2>
+        <p class="desc">Equilibrio entre malta y lúpulo: cítricos suaves, caramelo ligero y final refrescante. Versátil y fácil de beber.</p>
+        <p class="abv">ABV 5.2% · IBU 40 (referencial)</p>
+      </div>
+    </article>
+
+    <!-- Trigo / Wheat -->
+    <article class="card">
+      <img class="thumb" src="images/trigo.jpg" alt="Cerveza de trigo — turbia y refrescante" />
+      <div class="content">
+        <span class="tag">Trigo</span>
+        <h2 class="title">Hefeweizen</h2>
+        <p class="desc">Notas clásicas a banana y clavo, espuma cremosa y textura suave. Ideal para días cálidos.</p>
+        <p class="abv">ABV 5.0% · IBU 12 (referencial)</p>
+      </div>
+    </article>
+
+    <!-- Sour -->
+    <article class="card">
+      <img class="thumb" src="images/sour.jpg" alt="Sour — vaso con fruta" />
+      <div class="content">
+        <span class="tag">Sour</span>
+        <h2 class="title">Sour de Frutas</h2>
+        <p class="desc">Acidez vibrante con aporte frutal (maracuyá/frambuesa); refrescante y de baja amargura.</p>
+        <p class="abv">ABV 4.5% · IBU 8 (referencial)</p>
+      </div>
+    </article>
+  </section>
+
+  <p class="note">⚠️ Reemplaza las imágenes en la carpeta <code>images/</code> con tus archivos (por ejemplo <code>ipa.jpg</code>, <code>lager.jpg</code>, etc.). Si ya nos indicaste rutas específicas, dímelas y las actualizo aquí mismo.</p>
+
+  <footer>
+    <div class="social">© Raíz Cervecera · Quilpué, Chile · <a href="https://instagram.com/raizcervecera">Instagram</a> · <a href="https://web.facebook.com/RaizCervecera">Facebook</a></div>
+  </footer>
 </body>
 </html>
