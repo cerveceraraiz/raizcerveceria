@@ -125,9 +125,7 @@
         <div class="pad">
           <h1>Contacto</h1>
           <p class="lead">Escríbenos para pedidos, colaboraciones o consultas. Te responderemos a la brevedad.</p>
-			<!-- FORMULARIO CONFIGURADO PARA NETLIFY -->
-  <form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-    <input type="hidden" name="form-name" value="contacto" />	
+			
           <form id="contactoForm" novalidate>
             <div class="row">
               <div>
@@ -174,7 +172,9 @@
             <p id="statusOk" class="status ok" role="status">¡Gracias por contactarnos 🍻!</p>
             <p id="statusErr" class="status err" role="alert">Revisa los campos requeridos.</p>
 		  </form>
-		  
+		  <!-- FORMULARIO CONFIGURADO PARA NETLIFY -->
+  <form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="contacto" />	</form>
         </div>
       </section>
 
